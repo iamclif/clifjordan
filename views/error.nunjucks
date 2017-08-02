@@ -1,0 +1,5 @@
+{% extends 'layout.nunjucks' %}
+
+{% block content %}
+<h1>Oops, sorry about that</h1>
+{% endblock %}
