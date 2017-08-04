@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
+  <meta name="description" content="I'm a Brooklyn Based Front End Web Developer">
+  <meta name="author" content="Clif Jordan">
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/styles/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:700,900" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Spinnaker|Oswald:400,300,700' rel='stylesheet' type='text/css'>
   {% if ENV_DEVELOPMENT %}
     <script src="http://localhost:35729/livereload.js"></script>
   {% endif %}
