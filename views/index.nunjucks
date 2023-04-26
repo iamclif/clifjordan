@@ -3,7 +3,7 @@
 {% block content %}
 <header>
   <div class="row">
-  <img class="logo" src="/images/clif-jordan-logo.png" alt="clif jordan logo">
+  <img class="logo" src="/images/clif-jordan-logo.png" alt="clif jordan">
       <ul class="contact-links">
           <li class="linkedin">
             <a href="http://www.linkedin.com/in/clifjordanq">linkedin</a>
