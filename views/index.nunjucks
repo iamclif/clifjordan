@@ -5,10 +5,7 @@
   <header class="masthead" data-reveal>
     <div class="masthead__brand">
       <img class="logo" src="/images/clif-jordan-logo.png" alt="Clif Jordan logo">
-      <div>
-        <p class="eyebrow">The Adirondacks in New York State</p>
-        <p class="brand-copy">{{ site.role }}</p>
-      </div>
+      <p class="brand-copy">{{ site.role }}</p>
     </div>
 
     <nav aria-label="Contact links">
@@ -20,7 +17,6 @@
 
   <section class="hero" data-reveal>
     <div class="hero__copy">
-      <p class="eyebrow">Design systems, accessible UI, front-end craft</p>
       <h1>Front End Developer. </br> Trail Rambler, Space Geek and Lover of Cocktails.</h1>
       <div class="hero__lede">
         <p>Hey there, I'm Clif, a Adirondack based developer.</p>
@@ -32,12 +28,15 @@
     </div>
 
     <aside class="hero__panel" aria-label="Core strengths">
-      <p class="panel-label">What I bring</p>
+      <p class="panel-label">About Me</p>
       <ul class="feature-list">
-        <li>Design systems and component thinking</li>
+        <li><a class="button button--primary" href="/photos">Photos</a></li>
         <li>Creative agency experience with strong delivery instincts</li>
         <li>Calm collaboration under pressure</li>
       </ul>
+      <div class="hero__panel-actions">
+        
+      </div>
     </aside>
   </section>
 </main>

@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Clif Jordan | Front End Developer' });
 });
 
+router.get('/photos', function(req, res, next) {
+  res.render('photos', { title: 'Photos | Clif Jordan' });
+});
+
 module.exports = router;

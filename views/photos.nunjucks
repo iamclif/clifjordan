@@ -1,0 +1,146 @@
+{% extends 'layout.nunjucks' %}
+
+{% block content %}
+<main class="detail-page">
+  <header class="masthead" data-reveal>
+    <div class="masthead__brand">
+      <img class="logo" src="/images/clif-jordan-logo.png" alt="Clif Jordan logo">
+      <p class="brand-copy">{{ site.role }}</p>
+    </div>
+
+    <nav aria-label="Page navigation">
+      <div class="hero__actions">
+        <a class="button" href="/">Back home</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-hero" data-reveal>
+    <div class="page-hero__copy">
+      <p class="eyebrow">Photos</p>
+      <h1>Projects, mountain air, and a few miles from home.</h1>
+      <p class="page-hero__lede">A visual scrapbook of the kind of things I like building, exploring, and chasing down with a camera close by.</p>
+    </div>
+
+    <aside class="hero__panel" aria-label="Photo collections">
+      <p class="panel-label">Collections</p>
+      <ul class="feature-list">
+        <li><a href="#home-improvement">Home Improvement</a></li>
+        <li><a href="#adirondack-playground">Adirondack Playground</a></li>
+        <li><a href="#travel">Travel</a></li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="photo-section" id="home-improvement" data-reveal>
+    <div class="section-heading">
+      <p class="eyebrow">Home Improvement</p>
+      <h2>Weekend builds, before-and-afters, and the satisfying stuff.</h2>
+      <p class="photo-section__intro">The projects category for sawdust, paint, problem-solving, and all the small upgrades that make a place feel more lived in.</p>
+    </div>
+
+    <div class="photo-grid photo-grid--home">
+      <article class="photo-card photo-card--large">
+        <div class="photo-card__image photo-card__image--workshop"></div>
+        <div class="photo-card__body">
+          <p class="photo-card__kicker">Project Log</p>
+          <h3>Built with a tape measure in one hand and a coffee in the other.</h3>
+          <p>Cabinet tweaks, trim work, paint refreshes, and the kind of practical fixes that make a room click.</p>
+        </div>
+      </article>
+
+      <article class="photo-card">
+        <div class="photo-card__image photo-card__image--materials"></div>
+        <div class="photo-card__body">
+          <p class="photo-card__kicker">Details</p>
+          <h3>Materials and mess</h3>
+          <p>Texture, tools, hardware, and all the in-progress moments that usually get skipped in the final reveal.</p>
+        </div>
+      </article>
+
+      <article class="photo-card">
+        <div class="photo-card__image photo-card__image--finish"></div>
+        <div class="photo-card__body">
+          <p class="photo-card__kicker">After</p>
+          <h3>The finished corner</h3>
+          <p>Clean lines, warmer light, and that nice moment when a rough idea finally settles into place.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="photo-section" id="adirondack-playground" data-reveal>
+    <div class="section-heading">
+      <p class="eyebrow">Adirondack Playground</p>
+      <h2>Trails, lakes, weather, and the places that recharge me.</h2>
+      <p class="photo-section__intro">This section leans into the local landscape: wide views, quiet water, trailhead starts, and that familiar North Country atmosphere.</p>
+    </div>
+
+    <div class="photo-grid photo-grid--adirondack">
+      <article class="photo-card">
+        <div class="photo-card__image photo-card__image--summit"></div>
+        <div class="photo-card__body">
+          <p class="photo-card__kicker">Trail Day</p>
+          <h3>Summit reward</h3>
+          <p>Ridges, lookouts, and the kind of sky that feels bigger once you have earned your way up to it.</p>
+        </div>
+      </article>
+
+      <article class="photo-card photo-card--wide">
+        <div class="photo-card__image photo-card__image--lake"></div>
+        <div class="photo-card__body">
+          <p class="photo-card__kicker">Waterline</p>
+          <h3>Lake days and quieter miles</h3>
+          <p>Paddles, shorelines, dock light, and the slower kind of adventure that still leaves plenty to remember.</p>
+        </div>
+      </article>
+
+      <article class="photo-card">
+        <div class="photo-card__image photo-card__image--forest"></div>
+        <div class="photo-card__body">
+          <p class="photo-card__kicker">In Between</p>
+          <h3>Forest textures</h3>
+          <p>Mossy greens, rocky paths, wet leaves, and the little details that make the Adirondacks feel alive.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="photo-section" id="travel" data-reveal>
+    <div class="section-heading">
+      <p class="eyebrow">Travel</p>
+      <h2>City corners, road-trip stops, and the good kind of wandering.</h2>
+      <p class="photo-section__intro">A mix of movement and memory: architecture, streetscapes, unexpected detours, and the snapshots that make a trip stick.</p>
+    </div>
+
+    <div class="photo-grid photo-grid--travel">
+      <article class="photo-card">
+        <div class="photo-card__image photo-card__image--city"></div>
+        <div class="photo-card__body">
+          <p class="photo-card__kicker">Urban Notes</p>
+          <h3>Street-level discoveries</h3>
+          <p>Signage, facades, corners, and the small visual moments that make a city memorable beyond the landmarks.</p>
+        </div>
+      </article>
+
+      <article class="photo-card">
+        <div class="photo-card__image photo-card__image--road"></div>
+        <div class="photo-card__body">
+          <p class="photo-card__kicker">On The Way</p>
+          <h3>Road-trip intervals</h3>
+          <p>Scenic pull-offs, gas-station sunsets, and the stretches in between that usually end up being the best part.</p>
+        </div>
+      </article>
+
+      <article class="photo-card photo-card--large">
+        <div class="photo-card__image photo-card__image--destination"></div>
+        <div class="photo-card__body">
+          <p class="photo-card__kicker">Arrival</p>
+          <h3>A sense of place worth holding onto.</h3>
+          <p>The frame for big views, new neighborhoods, and the kinds of destinations that stay with you after the trip is over.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+{% endblock %}

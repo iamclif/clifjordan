@@ -27,7 +27,7 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-block-size: 100vh;
   font-family: "Manrope", "Avenir Next", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
@@ -39,7 +39,7 @@ body {
 
 img {
   display: block;
-  max-width: 100%;
+  max-inline-size: 100%;
 }
 
 a {
@@ -48,9 +48,9 @@ a {
 }
 
 .site-shell {
-  width: min(calc(100% - 2rem), var(--max-width));
-  margin: 0 auto;
-  padding: 2rem 0 4rem;
+  inline-size: min(calc(100% - 2rem), var(--max-width));
+  margin-inline: auto;
+  padding-block: 2rem 4rem;
 }
 
 .home {
@@ -58,8 +58,14 @@ a {
   gap: 2rem;
 }
 
+.detail-page {
+  display: grid;
+  gap: 1.5rem;
+}
+
 .masthead,
 .hero,
+.page-hero,
 .info-card,
 .error-state {
   backdrop-filter: blur(1.125rem);
@@ -73,19 +79,15 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1.25rem;
+  padding-block: 1rem;
+  padding-inline: 1.25rem;
   border-radius: var(--radius-lg);
 }
 
-.masthead__brand {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
 .logo {
-  width: 15.625rem;
-  height: auto;
+  margin-block-end: .25rem;
+  inline-size: 15.625rem;
+  block-size: auto;
 }
 
 .eyebrow,
@@ -112,7 +114,7 @@ a {
   display: flex;
   gap: 0.75rem;
   margin: 0;
-  padding: 0;
+  padding-inline-start: 0;
   list-style: none;
 }
 
@@ -121,8 +123,8 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.75rem;
-  padding: 0.7rem 1.1rem;
+  min-block-size: 1.75rem;
+  padding: 0.7rem;
   border-radius: var(--radius-sm);
   border: 0.0625rem solid rgba(255, 255, 255, 0.16);
   transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
@@ -144,7 +146,16 @@ a {
   border-radius: calc(var(--radius-lg) + 0.5rem);
 }
 
+.page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(16.25rem, 0.85fr);
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: calc(var(--radius-lg) + 0.5rem);
+}
+
 .hero h1,
+.page-hero h1,
 .section-heading h2,
 .info-card h3,
 .error-state h1 {
@@ -153,21 +164,44 @@ a {
 }
 
 .hero h1 {
-  margin: 0.35rem 0 1rem;
+  margin-block: 0.35rem 1rem;
   font-size: clamp(2.75rem, 6vw, 5.5rem);
-  max-width: 12ch;
+  max-inline-size: 12ch;
+}
+
+.page-hero h1 {
+  margin-block: 0.35rem 1rem;
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  max-inline-size: 11ch;
 }
 
 .hero__lede {
-  max-width: 60ch;
+  max-inline-size: 60ch;
   margin: 0;
   color: var(--muted);
   font-size: 1rem;
 }
 
+.page-hero__lede {
+  max-inline-size: 58ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.photo-section__intro {
+  max-inline-size: 60ch;
+  margin-block: 1rem 0;
+  color: var(--muted);
+}
+
 .hero__actions {
   display: flex;
   gap: 1rem;
+}
+
+.hero__actions--stack {
+  margin-block-start: 1.5rem;
 }
 
 .button--primary {
@@ -176,6 +210,143 @@ a {
   border-color: transparent;
   font-weight: 800;
   font-size: .626rem;
+}
+
+.library-outline {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.photo-section {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.photo-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.photo-grid--home,
+.photo-grid--travel {
+  grid-template-columns: 1.2fr 0.8fr 0.8fr;
+}
+
+.photo-grid--adirondack {
+  grid-template-columns: 0.8fr 1.2fr 0.8fr;
+}
+
+.outline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.photo-card {
+  display: grid;
+  overflow: hidden;
+  min-block-size: 24rem;
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+  border: 0.0625rem solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.photo-card--large {
+  min-block-size: 30rem;
+}
+
+.photo-card--wide {
+  min-block-size: 30rem;
+}
+
+.photo-card__image {
+  min-block-size: 15rem;
+  background-size: cover;
+  background-position: center;
+  border-block-end: 0.0625rem solid rgba(255, 255, 255, 0.08);
+}
+
+.photo-card__image--workshop {
+  background:
+    linear-gradient(180deg, rgba(9, 17, 29, 0.08), rgba(9, 17, 29, 0.72)),
+    linear-gradient(135deg, #d6b98d 0%, #9a6a3e 35%, #3d2b20 100%);
+}
+
+.photo-card__image--materials {
+  background:
+    linear-gradient(180deg, rgba(9, 17, 29, 0.1), rgba(9, 17, 29, 0.7)),
+    linear-gradient(135deg, #e8d7ba 0%, #b9874f 40%, #5b3f28 100%);
+}
+
+.photo-card__image--finish {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(9, 17, 29, 0.68)),
+    linear-gradient(135deg, #f1eee5 0%, #a2a99d 45%, #38424a 100%);
+}
+
+.photo-card__image--summit {
+  background:
+    linear-gradient(180deg, rgba(7, 18, 33, 0.06), rgba(7, 18, 33, 0.72)),
+    linear-gradient(135deg, #8ed6ff 0%, #4a88a6 40%, #203447 100%);
+}
+
+.photo-card__image--lake {
+  background:
+    linear-gradient(180deg, rgba(7, 18, 33, 0.08), rgba(7, 18, 33, 0.7)),
+    linear-gradient(135deg, #9fe2d6 0%, #447f8c 45%, #183544 100%);
+}
+
+.photo-card__image--forest {
+  background:
+    linear-gradient(180deg, rgba(7, 18, 33, 0.08), rgba(7, 18, 33, 0.72)),
+    linear-gradient(135deg, #7bb26b 0%, #3f6841 40%, #1b3020 100%);
+}
+
+.photo-card__image--city {
+  background:
+    linear-gradient(180deg, rgba(7, 18, 33, 0.1), rgba(7, 18, 33, 0.72)),
+    linear-gradient(135deg, #f4c87c 0%, #9a6f5e 42%, #342f46 100%);
+}
+
+.photo-card__image--road {
+  background:
+    linear-gradient(180deg, rgba(7, 18, 33, 0.08), rgba(7, 18, 33, 0.7)),
+    linear-gradient(135deg, #f3aa78 0%, #bc6a68 45%, #463652 100%);
+}
+
+.photo-card__image--destination {
+  background:
+    linear-gradient(180deg, rgba(7, 18, 33, 0.08), rgba(7, 18, 33, 0.72)),
+    linear-gradient(135deg, #ffdf9a 0%, #89b0c7 45%, #314560 100%);
+}
+
+.photo-card__body {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  padding: 1.35rem;
+}
+
+.photo-card__kicker {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.photo-card__body h3 {
+  margin: 0;
+  font-family: "Space Grotesk", "Avenir Next Condensed", sans-serif;
+  font-size: clamp(1.35rem, 2.8vw, 2rem);
+  line-height: 1.08;
+}
+
+.photo-card__body p:last-child {
+  margin: 0;
+  color: var(--muted);
 }
 
 .hero__panel,
@@ -189,29 +360,35 @@ a {
   padding: 1.25rem;
 }
 
+.hero__panel-actions {
+  margin-block-start: 1.25rem;
+}
+
 .feature-list {
   display: grid;
   gap: 0.9rem;
-  margin: 1rem 0 0;
-  padding: 0;
+  margin-block-start: 1rem;
+  margin-block-end: 0;
+  padding-inline-start: 0;
   list-style: none;
 }
 
 .feature-list li {
-  padding-top: 0.9rem;
-  border-top: 0.0625rem solid var(--line);
+  padding-block-start: 0.9rem;
+  border-block-start: 0.0625rem solid var(--line);
   color: var(--muted);
 }
 
 .section-grid {
   display: grid;
   gap: 1.5rem;
-  padding-bottom: 2rem;
+  padding-block-end: 2rem;
 }
 
 .section-heading h2 {
-  margin: 0.35rem 0 0;
-  max-width: 12ch;
+  margin-block-start: 0.35rem;
+  margin-block-end: 0;
+  max-inline-size: 12ch;
   font-size: clamp(2rem, 4vw, 3.25rem);
 }
 
@@ -226,7 +403,8 @@ a {
 }
 
 .info-card h3 {
-  margin: 0 0 0.75rem;
+  margin-block-start: 0;
+  margin-block-end: 0.75rem;
   font-size: 1.3rem;
 }
 
@@ -236,8 +414,9 @@ a {
 }
 
 .error-state {
-  width: min(100%, 42rem);
-  margin: 10vh auto 0;
+  inline-size: min(100%, 42rem);
+  margin-block-start: 10vh;
+  margin-inline: auto;
   padding: 2rem;
   border-radius: var(--radius-lg);
 }
@@ -267,6 +446,11 @@ a {
 
 @media (max-width: 56.25rem) {
   .hero,
+  .page-hero,
+  .photo-grid--home,
+  .photo-grid--adirondack,
+  .photo-grid--travel,
+  .outline-grid,
   .card-grid {
     grid-template-columns: 1fr;
   }
@@ -274,8 +458,8 @@ a {
 
 @media (max-width: 40rem) {
   .site-shell {
-    width: min(calc(100% - 1rem), var(--max-width));
-    padding-top: 1rem;
+    inline-size: min(calc(100% - 1rem), var(--max-width));
+    padding-block-start: 1rem;
   }
 
   .masthead {
@@ -288,16 +472,16 @@ a {
   }
 
   .hero h1 {
-    max-width: 100%;
+    max-inline-size: 100%;
   }
 
   .hero__actions,
   .contact-links {
-    width: 100%;
+    inline-size: 100%;
   }
 
   .contact-links a,
   .button {
-    width: 100%;
+    inline-size: 100%;
   }
 }
