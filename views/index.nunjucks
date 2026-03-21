@@ -1,32 +1,44 @@
 {% extends 'layout.nunjucks' %}
 
 {% block content %}
-<header>
-  <div class="row">
-  <img class="logo" src="/images/clif-jordan-logo.png" alt="clif jordan">
-      <ul class="contact-links">
-          <li class="linkedin">
-            <a href="http://www.linkedin.com/in/clifjordanq">linkedin</a>
-          </li>
+<main class="home">
+  <header class="masthead" data-reveal>
+    <div class="masthead__brand">
+      <img class="logo" src="/images/clif-jordan-logo.png" alt="Clif Jordan logo">
+      <div>
+        <p class="eyebrow">The Adirondacks in New York State</p>
+        <p class="brand-copy">{{ site.role }}</p>
+      </div>
+    </div>
+
+    <nav aria-label="Contact links">
+      <div class="hero__actions">
+        <a class="button button--primary" href="https://www.linkedin.com/in/clifjordanq" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" data-reveal>
+    <div class="hero__copy">
+      <p class="eyebrow">Design systems, accessible UI, front-end craft</p>
+      <h1>Front End Developer. </br> Trail Rambler, Space Geek and Lover of Cocktails.</h1>
+      <div class="hero__lede">
+        <p>Hey there, I'm Clif, a Adirondack based developer.</p>
+        <p>I specialize in design systems.</p>
+        <p>Technically skilled and forward-thinking. I am curious, passionate, and a collaborative problem solver. I enjoy doing my bit to make the web a great place to work and play in.</p>
+        <p>My many years of creative agency experience has made me an expert at bridging the gap between design objectives and technical implementation.</p>
+        <p>I am cool under pressure and a strong team member.</p>
+      </div>
+    </div>
+
+    <aside class="hero__panel" aria-label="Core strengths">
+      <p class="panel-label">What I bring</p>
+      <ul class="feature-list">
+        <li>Design systems and component thinking</li>
+        <li>Creative agency experience with strong delivery instincts</li>
+        <li>Calm collaboration under pressure</li>
       </ul>
-  </div>
-</header>
-
-<div class="row intro">
-  <div class="col">
-    <div class="title">
-      <h1>Front End Developer. <br> Trail Rambler, Space Geek <br> and Lover of Cocktails.</h1>
-    </div>
-    <div id="overview">
-      <p>
-        Hey there, I'm Clif, a Adirondack based developer.
-      </p>
-      <p>I specialize in design systems.</p>
-      <p>Technically skilled and forward-thinking. I am curious, passionate, and a collaborative problem solver. I enjoy doing my bit to make the web a great place to work and play in.</p>
-      <p>My many years of creative agency experience has made me an expert at bridging the gap between design objectives and technical implementation.</p>
-      <p>I am cool under pressure and a strong team member.</p>
-    </div>
-  </div>
-</div>
-
+    </aside>
+  </section>
+</main>
 {% endblock %}

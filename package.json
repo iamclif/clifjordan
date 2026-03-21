@@ -5,7 +5,10 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:reload\"",
+    "dev:server": "NODE_ENV=development nodemon --watch app.js --watch bin/www --watch routes --watch views --ext js,nunjucks ./bin/www",
+    "dev:reload": "livereload public views --port 35729 --wait 200"
   },
   "repository": {
     "type": "git",
@@ -18,32 +21,16 @@
   },
   "homepage": "https://github.com/iamclif/clifjordan#readme",
   "engines": {
-    "node": "7.10.1"
+    "node": ">=18"
   },
   "dependencies": {
-    "express-nunjucks": "^2.2.3",
-    "nunjucks": "^3.0.1",
-    "body-parser": "~1.17.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",
-    "express": "~4.15.2",
-    "morgan": "~1.8.1",
-    "node-sass-middleware": "0.9.8",
-    "serve-favicon": "~2.4.2"
+    "express": "^5.1.0",
+    "morgan": "^1.10.0",
+    "nunjucks": "^3.2.4"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.4.0",
-    "babel-preset-es2015": "^6.24.1",
-    "bootstrap": "^4.0.0-alpha.6",
-    "grunt": "^1.0.1",
-    "grunt-autoprefixer": "^3.0.4",
-    "grunt-babel": "^6.0.0",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^2.2.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-develop": "^0.4.0",
-    "load-grunt-tasks": "^3.2.0"
+    "concurrently": "^9.2.1",
+    "livereload": "^0.10.3",
+    "nodemon": "^3.1.10"
   }
 }

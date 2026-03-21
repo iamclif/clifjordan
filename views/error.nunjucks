@@ -1,5 +1,10 @@
 {% extends 'layout.nunjucks' %}
 
 {% block content %}
-<h1>Oops, sorry about that</h1>
+<main class="error-state">
+  <p class="eyebrow">Something went sideways</p>
+  <h1>Oops, sorry about that.</h1>
+  <p>The page could not be loaded. Head back to the home page and try again.</p>
+  <a class="button button--primary" href="/">Return home</a>
+</main>
 {% endblock %}

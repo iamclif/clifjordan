@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <meta name="description" content="I'm a Brooklyn Based Front End Web Developer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Clif Jordan is a front-end developer focused on design systems, accessible interfaces, and modern web experiences.">
   <meta name="author" content="Clif Jordan">
-  <title>{{ title }}</title>
+  <meta name="theme-color" content="#101826">
+  <title>{{ title or site.name }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:700,900" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Spinnaker|Oswald:400,300,700' rel='stylesheet' type='text/css'>
   {% if ENV_DEVELOPMENT %}
     <script src="http://localhost:35729/livereload.js"></script>
   {% endif %}
 </head>
 <body>
-  <div class="container">
+  <div class="site-shell">
     {% block content %}{% endblock %}
   </div>
-  <script src="/js/scripts.js" type="text/javascript"></script>
+  <script src="/js/scripts.js" defer></script>
 </body>
 </html>
